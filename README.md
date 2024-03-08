@@ -1,5 +1,7 @@
 # Prova 1
 
+Este é um sistema de visualização de monitoramento de temperaturas de loja em CLI via MQTT. O sistema possui um publisher, que publica as temperaturas, e um subscriber que as mostra e informa se elas estão dentro do normal. Para rodar, basta clonar esse repositório, iniciar o pacote e executar os nós.
+
 ## Como rodar 
 
 ```
