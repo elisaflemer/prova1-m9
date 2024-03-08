@@ -64,10 +64,42 @@ def test_integrity():
 
     time.sleep(1)
 
-    assert test_message == sub.
+    assert return_message == sub.set_message(test)
 
 def test_alarm():
     low_temp_freezer = {
         'id': 'lj1f1', 'tipo': 'Freezer', 'temperatura': -30, 'timestamp': '8/3/2024 10:29'
     }
+    
+    high_temp_freezer = {
+        'id': 'lj1f1', 'tipo': 'Freezer', 'temperatura': 0, 'timestamp': '8/3/2024 10:29'
+    }
+
+    low_temp_fridge = {
+        'id': 'lj1g1', 'tipo': 'Geladeira', 'temperatura': 0, 'timestamp': '8/3/2024 10:29'
+    }
+
+    high_temp_fridge = {
+
+        'id': 'lj1g1', 'tipo': 'Geladeira', 'temperatura': 20, 'timestamp': '8/3/2024 10:29'
+    }
+
+    output = sub.set_alarms('', low_temp_freezer['tipo'], low_temp_freezer['temperatura'])
+
+
+
+    assert output.includes('[ALERTA: Temperatura BAIXA]')
+
+    output = sub.set_alarms('', high_temp_freezer['tipo'], high_temp_freezer['temperatura'])
+
+    assert output.includes('[ALERTA: Temperatura ALTA]')
+
+    output = sub.set_alarms('', low_temp_fridge['tipo'], low_temp_fridge['temperatura'])
+
+    assert output.includes('[ALERTA: Temperatura BAIXA]')
+
+    output = sub.set_alarms('', high_temp_fridge['tipo'], high_temp_fridge['temperatura'])
+
+    assert output.includes('[ALERTA: Temperatura ALTA]')
+    
 
