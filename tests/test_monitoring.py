@@ -64,7 +64,7 @@ def test_integrity():
 
     time.sleep(1)
 
-    assert return_message == sub.set_message(test)
+    assert test_message == sub.set_message(test)
 
 def test_alarm():
     low_temp_freezer = {
@@ -101,5 +101,5 @@ def test_alarm():
     output = sub.set_alarms('', high_temp_fridge['tipo'], high_temp_fridge['temperatura'])
 
     assert output.includes('[ALERTA: Temperatura ALTA]')
-    
+
 
