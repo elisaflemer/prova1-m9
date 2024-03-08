@@ -1,0 +1,14 @@
+pyproject.toml
+setup.cfg
+setup.py
+monitoring/__init__.py
+monitoring.egg-info/PKG-INFO
+monitoring.egg-info/SOURCES.txt
+monitoring.egg-info/dependency_links.txt
+monitoring.egg-info/not-zip-safe
+monitoring.egg-info/requires.txt
+monitoring.egg-info/top_level.txt
+monitoring/cli/__init__.py
+monitoring/cli/publisher.py
+monitoring/cli/subscriber.py
+tests/test_monitoring.py
